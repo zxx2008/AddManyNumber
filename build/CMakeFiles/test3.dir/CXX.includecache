@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/d/workspace/addbinary/CLA/binary.cpp
+binary.h
+/mnt/d/workspace/addbinary/CLA/binary.h
+
+/mnt/d/workspace/addbinary/CLA/binary.h
+
+/mnt/d/workspace/addbinary/CLA/binaryNumber.cpp
+binaryNumber.h
+/mnt/d/workspace/addbinary/CLA/binaryNumber.h
+cstdlib
+-
+iostream
+-
+
+/mnt/d/workspace/addbinary/CLA/binaryNumber.h
+binary.h
+/mnt/d/workspace/addbinary/CLA/binary.h
+
+/mnt/d/workspace/addbinary/CLA/manyNumber.cpp
+manyNumber.h
+/mnt/d/workspace/addbinary/CLA/manyNumber.h
+iostream
+-
+
+/mnt/d/workspace/addbinary/CLA/manyNumber.h
+binaryNumber.h
+/mnt/d/workspace/addbinary/CLA/binaryNumber.h
+vector
+-
+
+/mnt/d/workspace/addbinary/CLA/test/test3.cpp
+iostream
+-
+cstdlib
+-
+../manyNumber.h
+/mnt/d/workspace/addbinary/CLA/manyNumber.h
+
