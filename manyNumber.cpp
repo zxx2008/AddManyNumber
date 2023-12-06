@@ -2,7 +2,7 @@
  * @Author: Zu Xixin 2665954635@qq.com
  * @Date: 2023-12-05 18:53:10
  * @LastEditors: Zu Xixin 2665954635@qq.com
- * @LastEditTime: 2023-12-05 19:34:49
+ * @LastEditTime: 2023-12-06 17:07:09
  * @FilePath: /addbinary/CLA/manyNumber.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -47,7 +47,12 @@ void manyNumber::toTwoNums() {
         std::cout << (tmp1[0].NUM+i)->getValue() << " ";
     }
 
+    std::cout << std::endl;
+
     for (int i = 0; i < BITSIZE; ++i) {
         std::cout << (tmp1[1].NUM+i)->getValue() << " ";
     }
+
+    std::cout << std::endl;
+
 }
