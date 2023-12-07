@@ -21,8 +21,9 @@
 #include <helib/JsonWrapper.h>
 #include <helib/Ctxt.h>
 #include <string>
+#include <fstream>
 
-using namespace helib;
+//using namespace helib;
 
 int main(int argc, char* argv[])
 {
@@ -63,9 +64,30 @@ int main(int argc, char* argv[])
                                .c(c)
                                .build();
 
+
+
   // Print the context
   context.printout();
   std::cout << std::endl;
+
+  std::ofstream out_file("../key/context.json");
+
+  if (out_file.is_open()) {
+      context.writeToJSON(out_file);
+      out_file.close();
+  }
+  else {
+      std::cout << "Unable to open file!" << std::endl;
+  }
+
+  //helib::Context context2;
+  std::ifstream in_file("../key/context.json");
+  //helib::Context context2 = helib::Context::readFromJSON(infile);
+                                                 
+  
+  
+
+  
 
   // Print the security level
   std::cout << "Security: " << context.securityLevel() << std::endl;
@@ -74,12 +96,18 @@ int main(int argc, char* argv[])
   std::cout << "Creating secret key..." << std::endl;
   // Create a secret key associated with the context
   helib::SecKey secret_key(context);
+  //helib::SecKey sk2(context2);
   // Generate the secret key
   secret_key.GenSecKey();
+  //sk2.GenSecKey();
   std::cout << "Generating key-switching matrices..." << std::endl;
   // Compute key-switching matrices that we need
   helib::addSome1DMatrices(secret_key);
-
+  
+  std::ofstream outfile("../key/sk.json");
+  secret_key.writeToJSON(outfile);
+  std::ifstream infile("../key/sk.json");
+  helib::SecKey sk2 = helib::SecKey::readFromJSON(infile, helib::Context::readFromJSON(in_file));
   // Public key management
   // Set the secret key (upcast: SecKey is a subclass of PubKey)
   const helib::PubKey& public_key = secret_key;
@@ -199,7 +227,7 @@ int main(int argc, char* argv[])
 
   // Decrypt the modified ciphertext into a new plaintext
   helib::Ptxt<helib::BGV> new_plaintext_result(context);
-  secret_key.Decrypt(new_plaintext_result, ctxt);
+  sk2.Decrypt(new_plaintext_result, ctxt);
 
   std::cout << "Operation: Enc{(0 + 1)*1} + (0 + 1)*1" << std::endl;
   // Print the decrypted plaintext

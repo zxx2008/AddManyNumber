@@ -1,3 +1,0 @@
-/mnt/d/workspace/addbinary/CLA/build/CMakeFiles/rebuild_cache.dir
-/mnt/d/workspace/addbinary/CLA/build/CMakeFiles/edit_cache.dir
-/mnt/d/workspace/addbinary/CLA/build/CMakeFiles/test3.dir

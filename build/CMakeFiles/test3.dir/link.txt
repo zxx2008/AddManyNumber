@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/test3.dir/test/test3.cpp.o CMakeFiles/test3.dir/binaryNumber.cpp.o CMakeFiles/test3.dir/binary.cpp.o CMakeFiles/test3.dir/manyNumber.cpp.o  -o test3 
