@@ -2,7 +2,7 @@
  * @Author: Zu Xixin 2665954635@qq.com
  * @Date: 2023-12-07 20:21:46
  * @LastEditors: Zu Xixin 2665954635@qq.com
- * @LastEditTime: 2023-12-07 21:08:06
+ * @LastEditTime: 2023-12-18 10:48:38
  * @FilePath: /CLA/ctxt/CtxtVector.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -30,7 +30,9 @@ class CtxtVector {
      */    
     CtxtVector(const helib::EncryptedArray& ea, const PtxtVector& ptxt, const helib::PubKey& public_key, int slot);
 
-    void Encrypt(const helib::EncryptedArray& ea, const helib::SecKey& secret_keys);
+    void Decrypt(const helib::EncryptedArray& ea, const helib::SecKey& secret_keys);
+
+    friend void threeToTwo(const helib::EncryptedArray& ea, const helib::SecKey& secret_keys, const CtxtVector& ctxt1, const CtxtVector& ctxt2, const CtxtVector& ctxt3, CtxtVector& res1, CtxtVector& res2);
 };
 
 #endif

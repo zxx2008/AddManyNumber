@@ -47,7 +47,7 @@ int main() {
 
     CtxtVector* ctxt = new CtxtVector(ea, *ptxt, public_key, nslots);
 
-    ctxt->Encrypt(ea, secret_key);
+    ctxt->Decrypt(ea, secret_key);
 
     delete ptxt;
     delete ctxt;

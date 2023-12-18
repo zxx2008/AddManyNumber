@@ -2,7 +2,7 @@
  * @Author: Zu Xixin 2665954635@qq.com
  * @Date: 2023-12-07 20:44:34
  * @LastEditors: Zu Xixin 2665954635@qq.com
- * @LastEditTime: 2023-12-07 21:12:13
+ * @LastEditTime: 2023-12-18 11:12:16
  * @FilePath: /CLA/ctxt/CtxtVector.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -24,7 +24,7 @@ CtxtVector::CtxtVector(const helib::EncryptedArray& ea, const PtxtVector& ptxt, 
     }
 }
 
-void CtxtVector::Encrypt(const helib::EncryptedArray& ea, const helib::SecKey& secret_key) {
+void CtxtVector::Decrypt(const helib::EncryptedArray& ea, const helib::SecKey& secret_key) {
     std::vector<long> tmp(slot, 0);
     for (int i = 0; i < BITSIZE; ++i) {
         ea.decrypt(mctxt[i], secret_key, tmp);
@@ -33,5 +33,8 @@ void CtxtVector::Encrypt(const helib::EncryptedArray& ea, const helib::SecKey& s
         }
         std::cout << std::endl;
     }
+}
 
+void threeToTwo(const helib::EncryptedArray& ea, const helib::SecKey& secret_keys, const CtxtVector& ctxt1, const CtxtVector& ctxt2, const CtxtVector& ctxt3, CtxtVector& res1, CtxtVector& res2) {
+    
 }
